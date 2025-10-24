@@ -1,0 +1,213 @@
+// Form Styles
+.form {
+    padding-top: 218px;
+    text-align: center;
+    color: var(--primary-dark);
+    padding-bottom: 100px;
+
+    .container {
+        max-width: 960px;
+    }
+
+    .section_title {
+        padding-left: 0;
+        margin-bottom: 40px;
+    }
+
+    .wpcf7 {
+        width: 100%;
+
+        .wpcf7-form p {
+            margin: 0;
+            width: 100%;
+
+            &.full-row {
+                grid-column: 1 / -1;
+            }
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        gap: 14px;
+        max-width: 600px;
+        margin: auto;
+        position: relative;
+
+        input[type=text] {
+            margin-top: 14px;
+        }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+        width: 100%;
+        background: var(--white);
+        border: 1px solid rgba(51, 51, 51, 0.35);
+        border-radius: 8px;
+        padding: 14px 16px;
+        color: var(--secondary-dark);
+        font-size: 16px;
+        line-height: 1.4;
+
+        &:focus {
+            outline: none;
+            border-color: var(--primary-dark);
+            box-shadow: 0 0 0 2px rgba(14, 46, 64, 0.08);
+        }
+
+        &.wpcf7-not-valid {
+            border-color: red;
+        }
+    }
+
+    input {
+        border-radius: 15px;
+        border: 1px solid var(--primary-dark);
+        width: 100%;
+        font-size: 13.953px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 100%;
+        padding: 7px 18px;
+        outline: none;
+    }
+
+    textarea {
+        height: 180px;
+        resize: vertical;
+        border-radius: 15px;
+        border: 1px solid var(--primary-dark);
+        font-size: 14px;
+        overflow: hidden;
+
+        &::placeholder {
+            color: #333;
+        }
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: #333;
+    }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+    }
+
+    button,
+    .wpcf7-submit {
+        border-radius: 18.605px;
+        background: var(--primary-dark);
+        width: 96.512px;
+        height: 29.07px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-size: 13.953px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 0;
+        margin-left: auto;
+        width: 100%;
+        grid-column: 1 / -1;
+        height: 56px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 600;
+        transition: background .2s ease;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        &:hover {
+            background: var(--primary-dark);
+        }
+    }
+
+    &_vectors img {
+        position: absolute;
+        display: none;
+
+        &.vector_1 {
+            left: -295px;
+            top: 30px;
+        }
+
+        &.vector_2 {
+            right: -390px;
+            top: -20px;
+        }
+
+        &.vector_3 {
+            bottom: -50px;
+            right: -210px;
+        }
+    }
+
+    &_agree {
+        .wpcf7-list-item-label {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            position: relative;
+            color: var(--primary-dark);
+            font-size: 13.953px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 150%;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            border-bottom: 1px solid #022a30;
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+        }
+
+        span.check {
+            display: block;
+            width: 18.605px;
+            height: 18.605px;
+            flex-shrink: 0;
+            border-radius: 3px;
+            border: 1px solid #000;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            margin-left: 15px;
+        }
+
+        input:checked ~ span .check {
+            background-image: url(../images/check.svg);
+            background-position: center;
+            background-size: 120%;
+        }
+    }
+}
+
+.form-control {
+    margin-top: 14px;
+}
+

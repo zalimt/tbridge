@@ -1,0 +1,66 @@
+// Base Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Host Grotesk', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Host Grotesk', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+input[type=checkbox] {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.rotating-box {
+    transition: transform .1s ease-out;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+}
+
+.wrapper {
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.section_title {
+    color: var(--primary-dark);
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 70px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.services-section {
+    padding-top: 170px;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.mobile {
+    display: none;
+}
+

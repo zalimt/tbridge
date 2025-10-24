@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Compiled CSS (generated from SCSS)
+# Uncomment if you want to ignore compiled CSS in git
+# style.css
+# style.css.map
+

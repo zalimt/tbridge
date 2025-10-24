@@ -1,0 +1,14 @@
+{
+  "name": "custom-theme",
+  "version": "1.0.0",
+  "description": "Custom WordPress Theme with SCSS",
+  "scripts": {
+    "watch": "sass --watch style.scss:style.css --style compressed",
+    "build": "sass style.scss:style.css --style compressed",
+    "dev": "sass --watch style.scss:style.css --style expanded"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}
+

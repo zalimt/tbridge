@@ -1,5 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    // Mobile Menu Toggle
+    const burger = document.querySelector('.burger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuBtn = document.querySelector('.mobile-menu__btn');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu__overlay');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu__link');
+    const body = document.body;
+
+    // Open mobile menu
+    if (burger) {
+        burger.addEventListener('click', function() {
+            mobileMenu.classList.add('mobile-menu_open');
+            body.classList.add('no-scroll');
+        });
+    }
+
+    // Close mobile menu - close button
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.remove('mobile-menu_open');
+            body.classList.remove('no-scroll');
+        });
+    }
+
+    // Close mobile menu - overlay click
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', function() {
+            mobileMenu.classList.remove('mobile-menu_open');
+            body.classList.remove('no-scroll');
+        });
+    }
+
+    // Close mobile menu when a link is clicked
+    mobileMenuLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.remove('mobile-menu_open');
+            body.classList.remove('no-scroll');
+        });
+    });
+
     // Check if the browser is Safari
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
@@ -213,6 +253,10 @@ document.addEventListener("DOMContentLoaded", function () {
             $('.services_block .service_row').addClass('swiper-wrapper');
             $('.services_block .service_item').addClass('swiper-slide');
 
+            $('.benefits_block').addClass('swiper');
+            $('.benefits_block .row').addClass('swiper-wrapper');
+            $('.benefits_block .why_item').addClass('swiper-slide');
+
             // Initialize Swiper for .why_we_block if not already initialized
             let whyWeSwiper;
             if (!document.querySelector('.why_we_block').swiper) {
@@ -251,6 +295,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 createObserver(document.querySelector('.services_block'), servicesSwiper);
             }
 
+            // Initialize Swiper for .benefits_block if not already initialized
+            let benefitsSwiper;
+            if (!document.querySelector('.benefits_block').swiper) {
+                benefitsSwiper = new Swiper('.benefits_block', {
+                    autoplay: {
+                        delay: 3000,  // 3 seconds delay
+                        disableOnInteraction: false,
+                    },
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: '100%',
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                });
+                createObserver(document.querySelector('.benefits_block'), benefitsSwiper);
+            }
+
         } else {
             // Remove Swiper classes and destroy instances for larger screen sizes
             $('.why_we_block').removeClass('swiper');
@@ -264,6 +327,12 @@ document.addEventListener("DOMContentLoaded", function () {
             $('.services_block .service_item').removeClass('swiper-slide');
             const servicesSwiperInstance = document.querySelector('.services_block').swiper;
             if (servicesSwiperInstance) servicesSwiperInstance.destroy(true, true);
+
+            $('.benefits_block').removeClass('swiper');
+            $('.benefits_block .row').removeClass('swiper-wrapper');
+            $('.benefits_block .why_item').removeClass('swiper-slide');
+            const benefitsSwiperInstance = document.querySelector('.benefits_block').swiper;
+            if (benefitsSwiperInstance) benefitsSwiperInstance.destroy(true, true);
         }
     }
 

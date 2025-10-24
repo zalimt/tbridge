@@ -1,49 +1,7 @@
-// Responsive Styles
+// Responsive Styles - Optimized Breakpoints
 
-// Desktop Layouts
-@media (min-width: 769px) {
-    .why_we_block .row,
-    .why_we-section_block .row,
-    .benefits_block .row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        transform: none;
-        transition: none;
-        overflow: visible;
-    }
-    
-    .why_item {
-        flex: 1;
-        min-height: 270px;
-    }
-
-    .services_block .service_row,
-    .services-section_block .service_row {
-        display: flex;
-        flex-wrap: wrap;
-        transform: none;
-        transition: none;
-        overflow: visible;
-    }
-}
-
-// Tablet and large screen adjustments
-@media (min-width: 781px) and (max-width: 1920px) {
-    .next_section a,
-    .hero_action a {
-        font-size: 16px;
-    }
-}
-
-@media only screen and (min-width: 781px) and (min-height: 481px) {
-    .swiper-pagination-bullet {
-        display: none;
-    }
-}
-
-// 1400px and below
-@media only screen and (max-width: 1400px) {
+// Desktop optimizations (max-width: 1200px)
+@media (max-width: 1200px) {
     .container {
         padding: 0 15px;
     }
@@ -51,47 +9,52 @@
     .hero {
         min-height: auto;
 
-        &_title span {
-            padding-left: 140px;
+        &_title {
+            font-size: 110px;
+
+            span {
+                padding-left: 140px;
+            }
+        }
+
+        .container .background_video {
+            right: -5%;
+            top: -20%;
         }
     }
 
     .animation {
         padding-left: 20px;
         padding-right: 20px;
-    }
 
-    .licenses_vectors img {
-        &.vector_2 {
-            bottom: 81px;
+        .container {
+            padding: 140px 40px 0;
         }
 
-        &.vector_3 {
-            bottom: 115px;
-        }
-    }
-}
+        .bridge_video {
+            max-width: 815px;
+            bottom: auto;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
 
-// 1200px and below
-@media only screen and (max-width: 1200px) {
-    .hero_title {
-        font-size: 110px;
-    }
-
-    .animation .bridge_video {
-        max-width: 815px;
-        bottom: auto;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%);
-
-        video {
-            position: static;
+            video {
+                position: static;
+            }
         }
     }
 
     .why_name {
         font-size: 36px;
+    }
+
+    .why_we .row,
+    .benefits .row {
+        gap: 25px;
+    }
+
+    .why_box {
+        padding: 25px;
     }
 
     .licenses_vectors img {
@@ -101,10 +64,12 @@
         }
 
         &.vector_2 {
+            bottom: 81px;
             width: 80px;
         }
 
         &.vector_3 {
+            bottom: 115px;
             width: 50px;
         }
     }
@@ -119,77 +84,21 @@
 
     .service {
         background-position: center 70%;
+
+        &:before {
+            max-width: 768px;
+            top: 50px;
+        }
     }
 }
 
-// 1024px and below (Tablet)
-@media only screen and (max-width: 1024px) {
-    .container {
-        max-width: 768px;
-    }
-
-    .header_logo {
-        display: none;
-    }
-
-    .hero {
-        .container .background_video {
-            right: -5%;
-            top: -20%;
-        }
-
-        &_title {
-            line-height: 90px;
-            font-size: 90px;
-
-            span {
-                padding: 0;
-            }
-        }
-    }
-
-    .animation {
-        .container {
-            padding: 140px 40px 0;
-        }
-
-        .bridge_video {
-            max-width: 900px;
-            bottom: 510px;
-        }
-    }
-
-    .benefits .row {
-        gap: 25px;
-    }
-
-    .why_we .row {
-        gap: 25px;
-    }
-
-    .why_box {
-        padding: 25px;
-    }
-
-    .why_name {
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-
-    .animation_vector1 {
-        z-index: -1;
-    }
-
-    .service:before {
-        max-width: 768px;
-        top: 50px;
-    }
-}
-
-// Medium Tablet Range
-@media only screen and (481px <= width <= 781px) and (481px <= height <= 1181px),
-only screen and (481px <= width <= 1024px) and (481px <= height <= 781px) {
+// Tablet (max-width: 900px)
+@media (max-width: 900px) {
+    
     header {
+        .header_logo {
+            display: none;
+        }
         .container {
             max-width: 100%;
             padding: 0;
@@ -199,6 +108,7 @@ only screen and (481px <= width <= 1024px) and (481px <= height <= 781px) {
             display: block;
             padding: 13px 35px;
             border-radius: 0;
+            max-width: 100%;
 
             ul {
                 display: none;
@@ -213,6 +123,11 @@ only screen and (481px <= width <= 1024px) and (481px <= height <= 781px) {
                     }
                 }
             }
+        }
+
+        .header_menu_left,
+        .header_menu_right {
+            display: none;
         }
     }
 
@@ -302,6 +217,10 @@ only screen and (481px <= width <= 1024px) and (481px <= height <= 781px) {
             max-width: 700px;
             left: 50%;
             top: -80px;
+        }
+
+        &_vector1 {
+            z-index: -1;
         }
     }
 
@@ -511,10 +430,70 @@ only screen and (481px <= width <= 1024px) and (481px <= height <= 781px) {
             }
         }
     }
+
+    .pricing_table_container {
+        margin: 40px 0;
+    }
+
+    .pricing_table {
+        th, td {
+            padding: 12px 16px;
+        }
+
+        th {
+            font-size: 16px;
+        }
+    }
+
+    .service_name {
+        font-size: 14px;
+        min-width: 100px;
+    }
+
+    .service_desc {
+        font-size: 12px;
+        max-width: 200px;
+    }
+
+    .service_fee {
+        font-size: 14px;
+        min-width: 80px;
+    }
+
+    .pricing_card_h {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .form .wpcf7-form {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .form .wpcf7-submit {
+        grid-column: 1 / -1;
+    }
+
+    .benefits .row {
+        gap: 25px;
+    }
+
+    .benefits .why_box {
+        padding: 25px;
+    }
+
+    .benefits .why_name {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
 }
 
-// 740px and below (within tablet range)
-@media only screen and (max-width: 740px) and (min-width: 481px) and (min-height: 481px) {
+// Tablet Small (max-width: 768px)
+@media (max-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+
     .hero_title {
         font-size: 75px;
         line-height: 75px;
@@ -537,18 +516,6 @@ only screen and (481px <= width <= 1024px) and (481px <= height <= 781px) {
         video {
             max-height: initial;
             bottom: -50vw;
-        }
-    }
-}
-
-// 610px and below (within tablet range)
-@media only screen and (max-width: 610px) and (min-width: 481px) and (min-height: 481px) {
-    .hero_title {
-        font-size: 60px;
-        line-height: 60px;
-
-        span {
-            padding: 0;
         }
     }
 
@@ -599,11 +566,26 @@ only screen and (481px <= width <= 1024px) and (481px <= height <= 781px) {
             padding: 0;
         }
     }
+
+    .benefits .row {
+        display: block;
+    }
+
+    .benefits .why_item {
+        width: 100%;
+    }
+
+    .benefits .why_box {
+        padding: 25px 43px;
+    }
+
+    .benefits .why_name {
+        font-size: 35px;
+    }
 }
 
-// Mobile Column Layout - No Sliders
-@media only screen and (max-width: 481px),
-only screen and (max-height: 481px) and (max-width: 1180px) {
+// Mobile (max-width: 500px)
+@media (max-width: 500px) {
     .mobile {
         display: block;
     }
@@ -619,180 +601,43 @@ only screen and (max-height: 481px) and (max-width: 1180px) {
 
     .hero_title {
         margin-left: 0;
-    }
+        font-size: 44px;
+        line-height: 45px;
+        margin-bottom: 11px;
 
-    .licenses_text br {
-        display: block;
-    }
-
-    // Why We section - column layout
-    .why_we_block .row,
-    .why_we-section_block .row {
-        display: flex;
-        flex-direction: column;
-        padding: 0 20px;
-    }
-
-    .why_item {
-        width: 100%;
-        max-width: 100%;
-        flex: none;
-    }
-
-    // Services section - column layout
-    .services_block .service_row,
-    .services-section_block .service_row {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 20px;
-    }
-
-    .service_item {
-        width: 100%;
-        max-width: 100%;
-        flex: none;
-        padding: 0;
-    }
-
-    // Benefits section - column layout
-    .benefits_block .row {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding: 0 20px;
-    }
-
-    .licenses {
-        padding-top: 100px;
-
-        &_text {
-            width: 100%;
-        }
-
-        .license-img {
-            width: 100%;
-        }
-    }
-
-    .form {
-        padding-top: 120px;
-    }
-
-    .contacts {
-        padding: 70px 10px;
-        margin: 0;
-
-        .container {
-            flex-direction: column;
-            gap: 40px;
-
-            .contacts_infos {
-                flex-direction: column;
-                gap: 20px;
-
-                .contacts_list {
-                    gap: 20px;
-                }
-            }
-        }
-    }
-
-    .animation .bridge_video {
-        height: 100%;
-        transform: translate(0);
-        left: 0;
-        top: auto;
-        bottom: -10%;
-
-        video {
-            height: 85%;
-        }
-
-        img {
-            top: 45%;
-            transform: translateY(-50%);
-        }
-    }
-
-    header {
-        .container {
-            max-width: 100%;
+        span {
             padding: 0;
         }
 
-        .header_menu {
-            display: block;
-            padding: 13px 35px;
-            border-radius: 0;
-
-            ul {
-                display: none;
-
-                &.mobile_menu {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-
-                    .logo img {
-                        height: 22px;
-                    }
-                }
-            }
+        strong::before {
+            height: 5px;
         }
     }
 
-    .hero {
-        padding: 77px 0 37px;
+    .hero_subtitle {
+        font-size: 20px;
+        margin-bottom: 0;
+        text-align-last: left;
+    }
 
-        &_logo {
-            display: none;
-        }
+    .hero_action {
+        justify-content: flex-start;
+        margin-top: 30px;
 
-        &_action {
-            justify-content: flex-start;
-            margin-top: 30px;
+        a {
+            font-size: 18px;
+            margin-left: 0;
 
-            a {
-                font-size: 18px;
-                margin-left: 0;
+            svg {
+                rect {
+                    fill: var(--primary-dark);
+                }
 
-                svg {
-                    rect {
-                        fill: var(--primary-dark);
-                    }
-
-                    path {
-                        stroke: var(--white);
-                    }
+                path {
+                    stroke: var(--white);
                 }
             }
         }
-
-        &_title {
-            font-size: 44px;
-            line-height: 45px;
-            margin-bottom: 11px;
-
-            span {
-                padding: 0;
-            }
-
-            strong::before {
-                height: 5px;
-            }
-        }
-
-        &_subtitle {
-            font-size: 20px;
-            margin-bottom: 0;
-            text-align-last: left;
-        }
-    }
-
-    .vectors_container {
-        bottom: auto;
-        top: 0;
     }
 
     .hero_vectors img {
@@ -866,6 +711,28 @@ only screen and (max-height: 481px) and (max-width: 1180px) {
                 }
             }
         }
+
+        .bridge_video {
+            height: 100%;
+            transform: translate(0);
+            left: 0;
+            top: auto;
+            bottom: 0;
+
+            video {
+                height: 100%;
+            }
+
+            img {
+                top: 52%;
+                transform: translateY(-50%);
+            }
+        }
+
+        .line {
+            width: 481px;
+            top: -64px;
+        }
     }
 
     .services_vectors,
@@ -905,14 +772,59 @@ only screen and (max-height: 481px) and (max-width: 1180px) {
         }
     }
 
-    .section_title {
-        font-size: 35px;
-        margin-bottom: 45px;
-        padding-left: 0;
+    // Column layouts for mobile
+    .why_we_block .row,
+    .why_we-section_block .row {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
     }
 
     .why_item {
         width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+
+    .services_block .service_row,
+    .services-section_block .service_row {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .service_item {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+        padding: 0;
+        overflow: hidden;
+        padding: 170px 30px 40px;
+
+        img {
+            height: 40px;
+            top: 0;
+            bottom: 125px;
+        }
+
+        &_text {
+            padding: 16px;
+            font-size: 22px;
+        }
+    }
+
+    .benefits_block .row {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .section_title {
+        font-size: 35px;
+        margin-bottom: 45px;
+        padding-left: 0;
     }
 
     .why_box {
@@ -946,23 +858,6 @@ only screen and (max-height: 481px) and (max-width: 1180px) {
         gap: 0;
     }
 
-    .service_item {
-        width: 100%;
-        overflow: hidden;
-        padding: 170px 30px 40px;
-
-        img {
-            height: 40px;
-            top: 0;
-            bottom: 125px;
-        }
-
-        &_text {
-            padding: 16px;
-            font-size: 22px;
-        }
-    }
-
     .service_icon {
         height: auto;
     }
@@ -993,6 +888,18 @@ only screen and (max-height: 481px) and (max-width: 1180px) {
         .container {
             padding-bottom: 0;
         }
+
+        &_text {
+            width: 100%;
+
+            br {
+                display: block;
+            }
+        }
+
+        .license-img {
+            width: 100%;
+        }
     }
 
     .pricing {
@@ -1020,6 +927,7 @@ only screen and (max-height: 481px) and (max-width: 1180px) {
         position: relative;
         z-index: 99;
         padding-top: 31px;
+        padding-top: 120px;
 
         &:before {
             content: "";
@@ -1043,6 +951,8 @@ only screen and (max-height: 481px) and (max-width: 1180px) {
         padding: 25px 0 130px;
         margin: 75px 0 0;
         background-color: var(--primary-dark);
+        padding: 70px 10px;
+        margin: 0;
 
         &:before {
             width: 1268px;
@@ -1056,6 +966,17 @@ only screen and (max-height: 481px) and (max-width: 1180px) {
 
         .container {
             padding: 0 10px;
+            flex-direction: column;
+            gap: 40px;
+
+            .contacts_infos {
+                flex-direction: column;
+                gap: 20px;
+
+                .contacts_list {
+                    gap: 20px;
+                }
+            }
         }
 
         .section_title,
@@ -1071,6 +992,10 @@ only screen and (max-height: 481px) and (max-width: 1180px) {
             margin: 0;
             max-width: 250px;
         }
+    }
+
+    .next_section a {
+        font-size: 18px;
     }
 
     .swiper-pagination {
@@ -1098,117 +1023,30 @@ only screen and (max-height: 481px) and (max-width: 1180px) {
     }
 }
 
-// Very small mobile screens
-@media only screen and (max-width: 481px) {
-    .animation {
-        .bridge_video {
-            bottom: 0;
-
-            video {
-                height: 100%;
-            }
-
-            img {
-                top: 52%;
-            }
-        }
-
-        .line {
-            width: 481px;
-            top: -64px;
-        }
+// Desktop grid layouts (min-width: 769px)
+@media (min-width: 769px) {
+    .why_we_block .row,
+    .why_we-section_block .row,
+    .benefits_block .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        transform: none;
+        transition: none;
+        overflow: visible;
+    }
+    
+    .why_item {
+        flex: 1;
+        min-height: 270px;
     }
 
-    .next_section a {
-        font-size: 18px;
-    }
-}
-
-// Tablet Specific Overrides
-@media (max-width: 1024px) {
-    .benefits .row {
-        gap: 25px;
-    }
-
-    .benefits .why_box {
-        padding: 25px;
-    }
-
-    .benefits .why_name {
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-
-    .header_logo {
-        display: none;
+    .services_block .service_row,
+    .services-section_block .service_row {
+        display: flex;
+        flex-wrap: wrap;
+        transform: none;
+        transition: none;
+        overflow: visible;
     }
 }
-
-// Mobile Specific Overrides
-@media (max-width: 768px) {
-    .header_menu_left,
-    .header_menu_right,
-    .header_logo {
-        display: none;
-    }
-
-    .pricing_table_container {
-        margin: 40px 0;
-    }
-
-    .pricing_table {
-        th, td {
-            padding: 12px 16px;
-        }
-
-        th {
-            font-size: 16px;
-        }
-    }
-
-    .service_name {
-        font-size: 14px;
-        min-width: 100px;
-    }
-
-    .service_desc {
-        font-size: 12px;
-        max-width: 200px;
-    }
-
-    .service_fee {
-        font-size: 14px;
-        min-width: 80px;
-    }
-
-    .pricing_card_h {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .form .wpcf7-form {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .form .wpcf7-submit {
-        grid-column: 1 / -1;
-    }
-
-    .benefits .row {
-        display: block;
-    }
-
-    .benefits .why_item {
-        width: 100%;
-    }
-
-    .benefits .why_box {
-        padding: 25px 43px;
-    }
-
-    .benefits .why_name {
-        font-size: 35px;
-    }
-}
-

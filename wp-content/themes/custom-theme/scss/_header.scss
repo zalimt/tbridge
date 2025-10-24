@@ -7,18 +7,18 @@ header {
     z-index: 100;
 
     .header_menu {
-        max-width: 870px;
+        max-width: fit-content;
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        padding: 16px 0;
-        border-radius: 0 0 40px 40px;
+        padding: 16px 40px;
+        border-radius: 0 0 20px 20px;
         background: var(--primary-dark);
 
         ul {
             display: flex;
-            gap: 0 18px;
             list-style: none;
+            gap: 10px;
 
             &.mobile_menu {
                 display: none;
@@ -27,7 +27,8 @@ header {
 
         li {
             display: flex;
-            gap: 0 18px;
+            align-items: center;
+            gap: 10px;
 
             &:after {
                 content: "";
@@ -65,7 +66,6 @@ header {
         list-style: none;
         margin: 0;
         padding: 0;
-        gap: 30px;
 
         li {
             margin: 0;
@@ -144,24 +144,13 @@ header {
         right: 0;
         bottom: 0;
         left: 0;
-        background: #ffffff1a;
+        background: rgba(14, 46, 64, 0.96);
         -webkit-backdrop-filter: blur(4.5px);
         backdrop-filter: blur(4.5px);
     }
 
     &__dialog {
         z-index: 2;
-        position: relative;
-        padding: 35px 43px;
-        width: 295px;
-        min-height: 295px;
-        border: 1px solid transparent;
-        border-radius: 20px;
-        background-color: var(--white);
-        -webkit-backdrop-filter: blur(4px);
-        backdrop-filter: blur(4px);
-        box-shadow: 0 4px 8px -1px #000;
-        transition: border-color .2s ease-in-out;
 
         &:active {
             border: 1px solid #078496;
@@ -170,8 +159,8 @@ header {
 
     &__btn {
         position: absolute;
-        top: 25px;
-        right: 27px;
+        top: 17px;
+        right: 38px;
         width: 15px;
         height: 15px;
         background: transparent;
@@ -179,7 +168,7 @@ header {
         padding: 0;
         margin: 0;
         font: inherit;
-        color: inherit;
+        color: #fff;
         cursor: pointer;
         outline: none;
         -webkit-appearance: none;
@@ -192,28 +181,14 @@ header {
         display: flex;
         flex-direction: column;
         gap: 32px;
-    }
-
-    &__item {
         list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
+        text-align: center;
 
-    &__link {
-        color: #000;
-        font-size: 15px;
-        font-weight: 300;
-        line-height: 22.5px;
-        text-align: left;
-        text-decoration: none;
-        -webkit-tap-highlight-color: transparent;
-        transition: background-color .2s ease-in-out;
-
-        &:active {
-            background: #bfe8ea;
-            -webkit-backdrop-filter: blur(4px);
-            backdrop-filter: blur(4px);
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
         }
     }
 }

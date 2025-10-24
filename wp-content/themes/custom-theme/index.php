@@ -32,8 +32,8 @@ get_header();?>
             <nav class="header_menu">
                 <ul class="header_menu_left">
                     <li><a href="#about">Tría Bridge</a></li>
-                    <li><a href="#license">License</a></li>
                     <li><a href="#services-section">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
                 </ul>
                 <div class="header_logo">
                     <a href="#">
@@ -42,7 +42,7 @@ get_header();?>
                 </div>
                 <ul class="header_menu_right">
                     <li><a href="#benefits">Benefits</a></li>
-                    <li><a href="#become_a_client">Become a client</a></li>
+                    <li><a href="#license">License</a></li>
                     <li><a href="#contacts">Contacts</a></li>
                 </ul>
                 <ul class="mobile_menu">
@@ -60,43 +60,26 @@ get_header();?>
     <!--        Mobile menu-->
     <div class="mobile-menu">
         <div class="mobile-menu__overlay"></div>
-
         <div class="mobile-menu__dialog">
             <button class="mobile-menu__btn">
                 <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.00037 2L16 17" stroke="#0E2E40" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M15.9996 2L1.00001 17" stroke="#0E2E40" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M1.00037 2L16 17" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M15.9996 2L1.00001 17" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
                 </svg>
             </button>
             <ul class="mobile-menu__list">
-                <li class="mobile-menu__item">
-                    <a href="#to_about_link" class="mobile-menu__link">About</a>
-                </li>
-                <li class="mobile-menu__item">
-                    <a href="#to_why_us_link" class="mobile-menu__link">Why Us</a>
-                </li>
-                <li class="mobile-menu__item">
-                    <a href="#to_services_title" class="mobile-menu__link">Services</a>
-                </li>
-                <li class="mobile-menu__item">
-                    <a href="#benefits" class="mobile-menu__link">Our Benefits</a>
-                </li>
-                <li class="mobile-menu__item">
-                    <a href="#to_license_link" class="mobile-menu__link">Our Licenses</a>
-                </li>
-                <li class="mobile-menu__item">
-                    <a href="#to_become_client_link" class="mobile-menu__link">Become a Client</a>
-                </li>
-                <li class="mobile-menu__item">
-                    <a href="#contacts" class="mobile-menu__link">Contacts</a>
-                </li>
+                <li><a href="#about">Tría Bridge</a></li>
+                <li><a href="#services-section">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#license">License</a></li>
+                <li><a href="#contacts">Contacts</a></li>
             </ul>
         </div>
     </div>
 
     <!-- Hero -->
     <section class="hero">
-
         <div class="container">
 
             <!-- <div class="background_video" style="display: none;">
@@ -107,7 +90,7 @@ get_header();?>
 
 
             <h1 class="hero_title">
-                Reliable <strong>bridge</strong> to crypto assets
+            <strong>Reliable bridge</strong> to crypto assets
             </h1>
             <div class="hero_subtitle">Exchange. Invest. Manage.</div>
             <div class="hero_action">
@@ -120,15 +103,9 @@ get_header();?>
                 </a>
             </div>
         </div>
-
-        <div class="vectors_container">
-            <div class="hero_vectors">
-                <img src="<?=$path?>images/hero_vector_2.svg" alt="" class="vector_2">
-            </div>
-        </div>
-
+        <img src="<?=$path?>images/hero_vector_2.svg" alt="" class="vector_2">
+        <img src="<?=$path?>images/hero_vector_3.svg" alt="" class="vector_3">
     </section>
-
     <!-- Animation section -->
     <section class="animation bridge_section" id="about">
         <div class="container">
@@ -149,7 +126,7 @@ get_header();?>
         <div class="next_section">
             <a href="#why_we">
 
-                Why work with&nbsp;Us?
+                Why us?
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                     <rect x="11" y="0.492188" width="15.0357" height="15.0357" rx="3" transform="rotate(45 11 0.492188)" fill="#078495"/>
@@ -216,7 +193,7 @@ get_header();?>
         <div class="next_section">
             <a href="#services-section">
 
-                Learn more
+                Our services
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                     <rect x="11" y="0.492188" width="15.0357" height="15.0357" rx="3" transform="rotate(45 11 0.492188)" fill="#078495"/>
@@ -235,46 +212,32 @@ get_header();?>
             </div>
 
             <div class="services-section_block">
+                <img src="<?=$path?>images/hero_vector_2.svg" alt="" class="vector_2">
+                <img src="<?=$path?>images/hero_vector_1.svg" alt="" class="vector_3">
                 <div class="service_row">
-                    <div class="service_item">
-                        <div class="service_icon">
-                            <img src="<?=$path?>images/exchange.svg" alt="Exchange icon">
-                        </div>
+                    <div class="service_item service-item-1">
                         <div class="service_item_text">
-                            Exchange between crypto assets
+                            <strong>Exchange</strong>Between Crypto Assets
                         </div>
                     </div>
-                    <div class="service_item">
-                        <div class="service_icon">
-                            <img src="<?=$path?>images/custody.svg" alt="Custody icon">
-                        </div>
+                    <div class="service_item service-item-2">
                         <div class="service_item_text">
-                            Custody service
+                            <strong>Custody</strong> Service
                         </div>
                     </div>
-                    <div class="service_item">
-                        <div class="service_icon">
-                            <img src="<?=$path?>images/brokerage.svg" alt="Brokerage icon">
-                        </div>
+                    <div class="service_item service-item-3">
                         <div class="service_item_text">
-                            Brokerage
+                            <strong>Brokerage</strong>Service
                         </div>
                     </div>
-                    <div class="service_item">
-                        <div class="service_icon">
-                            <img src="<?=$path?>images/invest.svg" alt="Investment advice icon">
-                        </div>
+                    <div class="service_item service-item-4">
                         <div class="service_item_text">
-                            Provision of Investment Advice
+                            <strong>Investment Advice</strong>Provision
                         </div>
                     </div>
-
-                    <div class="service_item">
-                        <div class="service_icon">
-                            <img src="<?=$path?>images/portfolio.svg" alt="Portfolio management icon">
-                        </div>
+                    <div class="service_item service-item-5">
                         <div class="service_item_text">
-                            Portfolio management
+                            <strong>Portfolio</strong>management
                         </div>
                     </div>
                 </div>
@@ -283,7 +246,7 @@ get_header();?>
             <div class="next_section">
                 <a href="#pricing">
 
-                    Learn more
+                    Fees
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <rect x="11" y="0.492188" width="15.0357" height="15.0357" rx="3" transform="rotate(45 11 0.492188)" fill="#078495"/>
@@ -356,6 +319,8 @@ get_header();?>
     <!-- Our Benefits Section -->
     <section class="benefits" id="benefits">
         <div class="container">
+        <img src="<?=$path?>images/hero_vector_2.svg" alt="" class="vector_2">
+        <img src="<?=$path?>images/hero_vector_1.svg" alt="" class="vector_3">
             <h2 class="section_title">Our benefits</h2>
             <div class="benefits_block">
                 <div class="row">
@@ -405,7 +370,7 @@ get_header();?>
             <div class="next_section" id="to_license_link">
                 <a href="#license">
 
-                    Learn more
+                    Licenses
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <rect x="11" y="0.492188" width="15.0357" height="15.0357" rx="3" transform="rotate(45 11 0.492188)" fill="#078495"/>
@@ -422,9 +387,6 @@ get_header();?>
             <div class="licenses_block">
                 <div class="licenses_text">
                     <strong>Tría Bridge (Tokenomica Bridge Ltd)</strong> is a licensed crypto asset service provider based in Cyprus. Tría Bridge operates under the registration number <strong>HE 429492</strong> and is licensed by the Cyprus Securities and Exchange Commission with <strong>Registration Number 013/24 dated 14/05/2024.</strong>
-                </div>
-                <div class="license-img">
-                <img src="<?=$path?>images/licenses-bg.png" alt="">
                 </div>
                 </div>
                 <div class="next_section" id="to_become_client_link">
@@ -443,7 +405,9 @@ get_header();?>
 
     <section class="form" id="become_a_client">
         <div class="container">
-        <h2 class="section_title">Become a Client</h2>
+            <img src="<?=$path?>images/hero_vector_1.svg" alt="" class="vector_3">
+            <img src="<?=$path?>images/hero_vector_2.svg" alt="" class="vector_2">
+            <h2 class="section_title">Become a Client</h2>
             <?php echo apply_shortcodes( '[contact-form-7 id="5b7d0eb" title="Contact form"]' ); ?>
         </div>
     </section>

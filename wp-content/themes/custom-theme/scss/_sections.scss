@@ -474,6 +474,39 @@
         padding: 30px;
         height: 360px;
         background-size: cover;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+
+        // Diagonal glare effect
+        &::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0) 40%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0) 60%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: translateX(100%) translateY(100%);
+            transition: transform 0.8s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+            &::before {
+                transform: translateX(-100%) translateY(-100%);
+            }
+        }
 
         img {
             left: 0;
@@ -485,6 +518,7 @@
             scale: 1.1;
             transition: .5s all;
         }
+
         &.service-item-1 {
             background-image: url('./images/services-exchange.webp');
         }
@@ -628,6 +662,14 @@
     padding: 14px 0 14px 18px;
     margin-bottom: 6px;
     border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background-color: rgba(87, 154, 162, 0.05);
+    }
 
     &:nth-child(even) {
         background-color: var(--white);

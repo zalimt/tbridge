@@ -112,10 +112,10 @@ get_header();?>
             <img class="line" src="<?=$path?>images/animation_line.png" alt="">
             <div class="texts_row">
                 <div class="text_item">
-                    <strong>Tr&iacute;a&nbsp;Bridge</strong> is&nbsp;committed to&nbsp;building <br> a&nbsp;modern and&nbsp;transformative business <br> in&nbsp;the&nbsp;digital asset industry, grounded in&nbsp;transparency, ethical values, and&nbsp;regulatory norms.
+                    <strong>Tr&iacute;aBridge</strong> is committed to building modern and transformative business in the digital asset industry, grounded in transparency, ethical values, and regulatory norms.
                 </div>
                 <div class="text_item">
-                    Our team comprises experienced <br> professionals from&nbsp;the&nbsp;financial <br> and&nbsp;information security industries.
+                    Our team comprises experienced professionals from the financial and information security industries.
                 </div>
             </div>
             <div class="bridge_video" style="display: none;">

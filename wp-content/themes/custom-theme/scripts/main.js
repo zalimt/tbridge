@@ -39,6 +39,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Custom checkbox helper - add checked class to label for CSS targeting
+    const checkboxes = document.querySelectorAll('.wpcf7-acceptance input[type="checkbox"], .wpcf7-list-item input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        const label = checkbox.closest('label');
+        
+        // Update on change
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                if (label) label.classList.add('is-checked');
+            } else {
+                if (label) label.classList.remove('is-checked');
+            }
+        });
+        
+        // Set initial state
+        if (checkbox.checked && label) {
+            label.classList.add('is-checked');
+        }
+    });
+
     // Check if the browser is Safari
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 

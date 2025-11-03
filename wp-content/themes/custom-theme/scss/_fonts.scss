@@ -2,19 +2,85 @@
 @font-face {
     font-family: 'Host Grotesk';
     font-weight: 300;
-    src: url(../assets/HostGrotesk-Light-_pZkJ7Kd.woff2);
+    font-style: normal;
+    src: url(../assets/HostGrotesk-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Host Grotesk';
+    font-weight: 300;
+    font-style: italic;
+    src: url(../assets/HostGrotesk-LightItalic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Host Grotesk';
+    font-weight: 400;
+    font-style: normal;
+    src: url(../assets/HostGrotesk-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Host Grotesk';
+    font-weight: 400;
+    font-style: italic;
+    src: url(../assets/HostGrotesk-Italic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Host Grotesk';
+    font-weight: 500;
+    font-style: normal;
+    src: url(../assets/HostGrotesk-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Host Grotesk';
+    font-weight: 500;
+    font-style: italic;
+    src: url(../assets/HostGrotesk-MediumItalic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Host Grotesk';
+    font-weight: 600;
+    font-style: normal;
+    src: url(../assets/HostGrotesk-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Host Grotesk';
+    font-weight: 600;
+    font-style: italic;
+    src: url(../assets/HostGrotesk-SemiBoldItalic.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Host Grotesk';
     font-weight: 700;
-    src: url(../assets/HostGrotesk-Bold-DXg7YMIq.woff2);
+    font-style: normal;
+    src: url(../assets/HostGrotesk-Bold.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Host Grotesk';
-    font-weight: 900;
-    src: url(../assets/HostGrotesk-Bold-DXg7YMIq.woff2);
+    font-weight: 700;
+    font-style: italic;
+    src: url(../assets/HostGrotesk-BoldItalic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Host Grotesk';
+    font-weight: 800;
+    font-style: normal;
+    src: url(../assets/HostGrotesk-ExtraBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Host Grotesk';
+    font-weight: 800;
+    font-style: italic;
+    src: url(../assets/HostGrotesk-ExtraBoldItalic.ttf) format('truetype');
 }
 
 @font-face {

@@ -14,6 +14,9 @@ get_header();?>
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="<?=$path?>images/logo.svg">
     <link rel="apple-touch-icon" href="<?=$path?>images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
     <!-- swiper -->
     <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>-->
@@ -90,9 +93,9 @@ get_header();?>
 
 
             <h1 class="hero_title">
-            <strong>Reliable bridge</strong> to crypto assets
+            <strong>Reliable Bridge</strong> to Crypto Assets
             </h1>
-            <div class="hero_subtitle">Exchange. Invest. Manage.</div>
+            <div class="hero_subtitle">Exchange <span>Invest</span> Manage</div>
             <div class="hero_action">
                 <a href="#about" id="to_about_link">
                     Learn more
@@ -126,7 +129,7 @@ get_header();?>
         <div class="next_section">
             <a href="#why_we">
 
-                Why us?
+                Why work with us?
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                     <rect x="11" y="0.492188" width="15.0357" height="15.0357" rx="3" transform="rotate(45 11 0.492188)" fill="#078495"/>
@@ -193,7 +196,7 @@ get_header();?>
         <div class="next_section">
             <a href="#services-section">
 
-                Our services
+                Learn more about our services
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                     <rect x="11" y="0.492188" width="15.0357" height="15.0357" rx="3" transform="rotate(45 11 0.492188)" fill="#078495"/>
@@ -246,7 +249,7 @@ get_header();?>
             <div class="next_section">
                 <a href="#pricing">
 
-                    Fees
+                    Learn more about our pricing
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <rect x="11" y="0.492188" width="15.0357" height="15.0357" rx="3" transform="rotate(45 11 0.492188)" fill="#078495"/>
@@ -304,7 +307,7 @@ get_header();?>
             <div class="next_section">
                 <a href="#benefits">
 
-                    Our benefits
+                    Learn more about our benefits
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <rect x="11" y="0.492188" width="15.0357" height="15.0357" rx="3" transform="rotate(45 11 0.492188)" fill="#078495"/>
@@ -370,7 +373,7 @@ get_header();?>
             <div class="next_section" id="to_license_link">
                 <a href="#license">
 
-                    Licenses
+                    Learn more about our licenses
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                         <rect x="11" y="0.492188" width="15.0357" height="15.0357" rx="3" transform="rotate(45 11 0.492188)" fill="#078495"/>

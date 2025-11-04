@@ -61,13 +61,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Check if the browser is Safari
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const backgroundVideoEl = document.querySelector('.background_video');
+    const bridgeVideoEl = document.querySelector('.bridge_video');
 
-    if (isSafari) {
+    if (isSafari && backgroundVideoEl) {
 
         // / Create and display the GIF
         // const gif = document.createElement('img');
         // gif.src = './videos/sequence.gif'; // Replace with your GIF path
-        // document.querySelector('.background_video').appendChild(gif);
+        // backgroundVideoEl.appendChild(gif);
         function generateMainSequence() {
             for(let i = 1; i <= 361; i++){
                 sequenceImage = document.createElement('img');
@@ -89,7 +91,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 sequenceImage.loading = 'lazy';
 
-                document.querySelector('.background_video').appendChild(sequenceImage)
+                if(backgroundVideoEl) {
+                    backgroundVideoEl.appendChild(sequenceImage);
+                }
             }
         }
 
@@ -121,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let isAnimated = false;
 
         function generateBridgeSequence() {
+            if(!bridgeVideoEl) return;
             for(let i = 0; i <= 50; i++){
                 bridgeImage = document.createElement('img');
                 if(i < 10){
@@ -136,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 bridgeImage.loading = 'lazy'
 
-                document.querySelector('.bridge_video').appendChild(bridgeImage)
+                bridgeVideoEl.appendChild(bridgeImage)
             }
         }
 
@@ -174,10 +179,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         // Listen for the scroll event to check when the block enters the viewport
-        window.addEventListener('scroll', checkAndStartAnim);
+        if(block) {
+            window.addEventListener('scroll', checkAndStartAnim);
+        }
 
 
-    } else {
+    } else if (backgroundVideoEl) {
         // Create and display the video
         const video = document.createElement('video');
         video.autoplay = true;
@@ -190,10 +197,11 @@ document.addEventListener("DOMContentLoaded", function () {
         sourceWebM.type = 'video/webm';
 
         video.appendChild(sourceWebM);
-        document.querySelector('.background_video').appendChild(video);
+        backgroundVideoEl.appendChild(video);
 
-        // Create and display the video
-        const bridgeVideo = document.createElement('video');
+        // Create and display the video for bridge
+        if(bridgeVideoEl) {
+            const bridgeVideo = document.createElement('video');
         bridgeVideo.autoplay = false; // Autoplay is disabled; we will manually trigger it
         bridgeVideo.muted = true; // Ensure the video is muted (autoplay restriction workaround)
         bridgeVideo.loop = false;
@@ -205,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
         bridgeSourceWebM.type = 'video/webm';
 
         bridgeVideo.appendChild(bridgeSourceWebM);
-        document.querySelector('.bridge_video').appendChild(bridgeVideo);
+        bridgeVideoEl.appendChild(bridgeVideo);
 
         // Get the normal video element
         const normalVideo = document.getElementById('normal');
@@ -226,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 videoPlayed = true; // Set the flag to prevent future plays
             }
         });
-
+        }
     }
 
 
@@ -278,7 +286,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Initialize Swiper for .why_we_block if not already initialized
             let whyWeSwiper;
-            if (!document.querySelector('.why_we_block').swiper) {
+            const whyWeBlock = document.querySelector('.why_we_block');
+            if (whyWeBlock && !whyWeBlock.swiper) {
                 whyWeSwiper = new Swiper('.why_we_block', {
                     autoplay: {
                         delay: 3000,  // 3 seconds delay
@@ -297,7 +306,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Initialize Swiper for .services_block if not already initialized
             let servicesSwiper;
-            if (!document.querySelector('.services_block').swiper) {
+            const servicesBlock = document.querySelector('.services_block');
+            if (servicesBlock && !servicesBlock.swiper) {
                 servicesSwiper = new Swiper('.services_block', {
                     autoplay: {
                         delay: 3000,  // 3 seconds delay
@@ -316,7 +326,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Initialize Swiper for .benefits_block if not already initialized
             let benefitsSwiper;
-            if (!document.querySelector('.benefits_block').swiper) {
+            const benefitsBlock = document.querySelector('.benefits_block');
+            if (benefitsBlock && !benefitsBlock.swiper) {
                 benefitsSwiper = new Swiper('.benefits_block', {
                     autoplay: {
                         delay: 3000,  // 3 seconds delay
@@ -338,19 +349,22 @@ document.addEventListener("DOMContentLoaded", function () {
             $('.why_we_block').removeClass('swiper');
             $('.why_we_block .row').removeClass('swiper-wrapper');
             $('.why_we_block .why_item').removeClass('swiper-slide');
-            const whyWeSwiperInstance = document.querySelector('.why_we_block').swiper;
+            const whyWeBlockEl = document.querySelector('.why_we_block');
+            const whyWeSwiperInstance = whyWeBlockEl ? whyWeBlockEl.swiper : null;
             if (whyWeSwiperInstance) whyWeSwiperInstance.destroy(true, true);
 
             $('.services_block').removeClass('swiper');
             $('.services_block .service_row').removeClass('swiper-wrapper');
             $('.services_block .service_item').removeClass('swiper-slide');
-            const servicesSwiperInstance = document.querySelector('.services_block').swiper;
+            const servicesBlockEl = document.querySelector('.services_block');
+            const servicesSwiperInstance = servicesBlockEl ? servicesBlockEl.swiper : null;
             if (servicesSwiperInstance) servicesSwiperInstance.destroy(true, true);
 
             $('.benefits_block').removeClass('swiper');
             $('.benefits_block .row').removeClass('swiper-wrapper');
             $('.benefits_block .why_item').removeClass('swiper-slide');
-            const benefitsSwiperInstance = document.querySelector('.benefits_block').swiper;
+            const benefitsBlockEl = document.querySelector('.benefits_block');
+            const benefitsSwiperInstance = benefitsBlockEl ? benefitsBlockEl.swiper : null;
             if (benefitsSwiperInstance) benefitsSwiperInstance.destroy(true, true);
         }
     }
@@ -362,6 +376,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
     initializeSwiper();
 
-
+    // 3D Tilt Effect on Mouse Move
+    const rotatingBoxes = document.querySelectorAll('.rotating-box');
+    console.log('Found rotating boxes:', rotatingBoxes.length);
+    
+    rotatingBoxes.forEach((box, index) => {
+        console.log('Setting up box', index, box);
+        
+        box.addEventListener('mouseenter', function() {
+            console.log('Mouse entered box', index);
+        });
+        
+        box.addEventListener('mousemove', function(e) {
+            e.stopPropagation();
+            
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = ((y - centerY) / centerY) * -15; // -15 to 15 degrees
+            const rotateY = ((x - centerX) / centerX) * 15;  // -15 to 15 degrees
+            
+            console.log('Applying transform:', rotateX, rotateY);
+            
+            this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+            this.style.willChange = 'transform';
+        });
+        
+        box.addEventListener('mouseleave', function() {
+            console.log('Mouse left box', index);
+            this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            this.style.willChange = 'auto';
+        });
+    });
 
 });

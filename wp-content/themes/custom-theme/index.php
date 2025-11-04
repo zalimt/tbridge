@@ -169,7 +169,7 @@ get_header();?>
                         <div class="why_box rotating-box">
                             <h3 class="why_name">Security&nbsp;first</h3>
                             <div class="why_description">
-                                <p></p>Digital assets are managed using a secure custody provider.</p>
+                                <p>Digital assets are managed using a secure custody provider.</p>
                                 <p>Safe operations with a customized transaction authorization policy.</p>
                             </div>
                         </div>
@@ -183,7 +183,7 @@ get_header();?>
                         <div class="why_box rotating-box">
                             <h3 class="why_name">Accessibility</h3>
                             <div class="why_description">
-                                <p></p>Easy-to-use investments in a high-growth field.</p>
+                                <p>Easy-to-use investments in a high-growth field.</p>
                                 <p>Online tools with a personalized mobile application.</p>
                             </div>
                         </div>
@@ -240,7 +240,7 @@ get_header();?>
                     </div>
                     <div class="service_item service-item-5">
                         <div class="service_item_text">
-                            <strong>Portfolio</strong>management
+                            <strong>Portfolio management</strong>
                         </div>
                     </div>
                 </div>
